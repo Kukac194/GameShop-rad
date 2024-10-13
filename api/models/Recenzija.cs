@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace api.models
 {
-    public class Recenzije
+    public class Recenzija
     {
         public int Id { get; set; }
         public string? recenzija { get; set; }

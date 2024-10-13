@@ -17,6 +17,6 @@ namespace api.baza
         public DbSet<Igrica> Igrica { get; set; }
         public DbSet<Drzava> Drzava { get; set; }
         public DbSet<Proizvodac> Proizvodac { get; set; }
-        public DbSet<Recenzije> Recenzije { get; set; }
+        public DbSet<Recenzija> Recenzije { get; set; }
     }
 }

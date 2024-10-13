@@ -19,5 +19,7 @@ namespace api.models
         [ForeignKey("ProizvodacId")]
         public Proizvodac? Proizvodac { get; set; }
 
+        public ICollection<Recenzija>? recenzije { get; set; }
+
     }
 }

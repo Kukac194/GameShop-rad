@@ -9,5 +9,7 @@ namespace api.models
     {
         public int Id { get; set; }
         public string? naziv { get; set; }
+
+        public ICollection<Proizvodac>? proizvodaci { get; set; }
     }
 }
