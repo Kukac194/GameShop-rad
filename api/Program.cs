@@ -18,6 +18,10 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 
 
 builder.Services.AddScoped<IDrzavaRepository, DrzavaRepository>();
+builder.Services.AddScoped<IigricaRepository, IgricaRepository>();
+builder.Services.AddScoped<IProizvodacRepository, ProizvodacRepository>();
+builder.Services.AddScoped<IRecenzijaRepository, RecenzijaRepository>();
+
 
 var app = builder.Build();
 

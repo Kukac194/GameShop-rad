@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace api.dto.DrzavaDtos
+namespace api.dto.ProizvodacDtos
 {
-    public class DrzavaDto
+    public class ProizvodacDto
     {
         public int Id { get; set; }
-        public string? naziv { get; set; }
+        public string? ime { get; set; }
+
+        public int? drzavaId { get; set; }
     }
 }

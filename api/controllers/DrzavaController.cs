@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api.controllers
 {
-    [Route("api/drzava")]
+    [Route("api/drzave")]
     [ApiController]
     public class DrzavaController : ControllerBase
     {

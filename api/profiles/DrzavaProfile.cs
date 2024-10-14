@@ -6,7 +6,7 @@ using api.dto.DrzavaDtos;
 using api.models;
 using AutoMapper;
 
-namespace api.DrzavaProfile
+namespace api.profiles
 {
     public class DrzavaProfile : Profile
     {
