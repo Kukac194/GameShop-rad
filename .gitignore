@@ -6,3 +6,4 @@ Release/
 *.suo
 .vscode/
 .vs/
+.fake
