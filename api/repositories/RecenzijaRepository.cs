@@ -31,7 +31,7 @@ namespace api.repositories
                 throw new Exception($"Igrica sa ID-em {recenzijeDto.igricaId} ne postoji.");
             }
 
-            var recenzija = _context.Recenzije.FirstOrDefault(x => x.Id == id);
+            var recenzija = _context.Recenzija.FirstOrDefault(x => x.Id == id);
 
             if (recenzija == null)
             {
@@ -46,14 +46,14 @@ namespace api.repositories
 
         public List<RecenzijeDto> dohvatiRecenzijeZaIgru(int igricaId)
         {
-            var recenzije = _context.Recenzije.Where(x => x.igricaId == igricaId).ToList();
+            var recenzije = _context.Recenzija.Where(x => x.igricaId == igricaId).ToList();
             var recenzijeDto = _mapper.Map<List<RecenzijeDto>>(recenzije);
             return recenzijeDto;
         }
 
         public RecenzijeDto dohvatiRecenziju(int id)
         {
-            var recenzija = _context.Recenzije.Find(id);
+            var recenzija = _context.Recenzija.Find(id);
             if (recenzija == null)
             {
                 throw new Exception($"Recenzija sa ID-em {id} ne postoji.");
@@ -75,7 +75,7 @@ namespace api.repositories
             recenzija.recenzija = recenzijeDto.recenzija;
             recenzija.igricaId = recenzijeDto.igricaId;
 
-            _context.Recenzije.Add(recenzija);
+            _context.Recenzija.Add(recenzija);
             _context.SaveChanges();
 
             return _mapper.Map<RecenzijeDto>(recenzija);
@@ -83,7 +83,7 @@ namespace api.repositories
 
         public void obrisiRecenziju(int id)
         {
-            var recenzija = _context.Recenzije.FirstOrDefault(x => x.Id == id);
+            var recenzija = _context.Recenzija.FirstOrDefault(x => x.Id == id);
             if (recenzija == null)
             {
                 throw new Exception($"Recenzija sa ID-em {id} ne postoji.");

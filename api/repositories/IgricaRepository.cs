@@ -100,10 +100,10 @@ namespace api.repositories
             {
                 throw new Exception($"Igrica sa ID-em {id} ne postoji.");
             }
-            var recenzijeVezaneUzIgricu = _context.Recenzije.Where(r => r.igricaId == id).ToList();
+            var recenzijeVezaneUzIgricu = _context.Recenzija.Where(r => r.igricaId == id).ToList();
             if (recenzijeVezaneUzIgricu.Any())
             {
-                _context.Recenzije.RemoveRange(recenzijeVezaneUzIgricu);
+                _context.Recenzija.RemoveRange(recenzijeVezaneUzIgricu);
             }
 
             _context.Remove(igrica);

@@ -13,7 +13,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LokalnaKonekcija"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EdunovaContext"));
 });
 
 
@@ -25,12 +25,23 @@ builder.Services.AddScoped<IRecenzijaRepository, RecenzijaRepository>();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// if (app.Environment.IsDevelopment())
+// {
+app.UseSwagger(opcije =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    opcije.SerializeAsV2 = true;
+});
+app.UseSwaggerUI(opcije =>
+{
+    opcije.ConfigObject.AdditionalItems.Add("requestSnippetsEnabled", true);
+});
+// }
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.UseStaticFiles();
+app.UseCors("CorsPolicy");
+app.UseDefaultFiles();
+app.UseDeveloperExceptionPage();
+app.MapFallbackToFile("index.html");
 app.Run();
