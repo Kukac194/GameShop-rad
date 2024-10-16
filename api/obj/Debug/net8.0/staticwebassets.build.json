@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FbjPR4VUrTmaRwV/so+4LJRvu8ZzlfmxYzbKk9SH6Ww=",
+  "Hash": "tBYuTvJMzaF5IooQLLLBThddTPYBJlUEN8zixNyX/rk=",
   "Source": "api",
   "BasePath": "_content/api",
   "Mode": "Default",
@@ -16,6 +16,63 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\index-DfQ3Eo-l.js",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "assets/index-DfQ3Eo-l.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-DfQ3Eo-l.js"
+    },
+    {
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\index-DiwrgTda.css",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "assets/index-DiwrgTda.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-DiwrgTda.css"
+    },
+    {
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\react-CHdo91hT.svg",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "assets/react-CHdo91hT.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\react-CHdo91hT.svg"
+    },
     {
       "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\index.html",
       "SourceId": "api",
@@ -34,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\vite.svg",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "vite.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\vite.svg"
     }
   ]
 }

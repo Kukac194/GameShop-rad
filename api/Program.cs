@@ -17,6 +17,14 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 });
 
 
+builder.Services.AddCors(opcije =>
+{
+    opcije.AddPolicy("CorsPolicy",
+        builder =>
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+    );
+});
+
 builder.Services.AddScoped<IDrzavaRepository, DrzavaRepository>();
 builder.Services.AddScoped<IigricaRepository, IgricaRepository>();
 builder.Services.AddScoped<IProizvodacRepository, ProizvodacRepository>();
