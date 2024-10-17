@@ -48,7 +48,7 @@ function ListaIgrica() {
           {filteredGames.length > 0 ? (
             filteredGames.map((game) => (
               <li key={game.id} className="game-item">
-                <h2 className="game-title-first"><Link to={`/igrice/${game.id}`}>{game.naslov}</Link></h2>
+                <strong><h2 className="game-title-first"><Link to={`/igrice/${game.id}`}>{game.naslov}</Link></h2></strong>
                 <p className="game-producer">Proizvođač ID: {game.proizvodacId}</p>
                 <p className="game-price">Cijena: {game.cijena} €</p>
                 

@@ -3,12 +3,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import IgricaService from '../../services/IgricaService';
 import ProizvodacService from '../../services/ProizvodacService';
 import RecenzijeService from '../../services/RecenzijeService';
+import DrzavaService from '../../services/DrzavaService';
 import './IgriceDetalji.css';
 
 function IgricaDetalji() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [game, setGame] = useState(null);
+  const [country, setCountry] = useState(null);
   const [manufacturer, setManufacturer] = useState(null);
   const [recenzije, setRecenzije] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,29 +20,30 @@ function IgricaDetalji() {
   const [isAddingReview, setIsAddingReview] = useState(false);
 
   useEffect(() => {
-    IgricaService.dohvatiIgricuPoIdu(id)
-      .then(response => {
-        setGame(response);
-        return ProizvodacService.dohvatiProizvodacaPoIdu(response.proizvodacId);
-      })
-      .then(response => {
-        setManufacturer(response);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Greška prilikom dohvaćanja proizvođača:', error);
-        setLoading(false);
-      });
+    async function fetchData() {
+      try {
+        const gameResponse = await IgricaService.dohvatiIgricuPoIdu(id);
+        setGame(gameResponse);
 
-    RecenzijeService.dohvatiSveRecenzije(id)
-      .then(response => {
-        setRecenzije(response);
+        const manufacturerResponse = await ProizvodacService.dohvatiProizvodacaPoIdu(gameResponse.proizvodacId);
+        setManufacturer(manufacturerResponse);
+
+        if (manufacturerResponse && manufacturerResponse.drzavaId) {
+          const countryResponse = await DrzavaService.dohvatiDrzavu(manufacturerResponse.drzavaId);
+          setCountry(countryResponse);
+        }
+
+        const recenzijeResponse = await RecenzijeService.dohvatiSveRecenzije(id);
+        setRecenzije(recenzijeResponse);
+
         setLoading(false);
-      })
-      .catch(error => {
-        console.error('Greška prilikom dohvaćanja recenzija:', error);
+      } catch (error) {
+        console.error('Greška prilikom dohvaćanja podataka:', error);
         setLoading(false);
-      });
+      }
+    }
+
+    fetchData();
   }, [id]);
 
   const handleDelete = (recenzijaId) => {
@@ -129,7 +132,7 @@ function IgricaDetalji() {
         <div className="manufacturer-info">
           <h2 className="manufacturer-title">Proizvođač:</h2>
           <p><strong>Ime:</strong> {manufacturer.ime}</p>
-          <p><strong>Država porijekla:</strong> {manufacturer.drzavaId}</p>
+          {country && <p><strong>Država porijekla:</strong> {country.naziv}</p>}
         </div>
       )}
 

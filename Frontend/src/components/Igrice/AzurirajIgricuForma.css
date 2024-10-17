@@ -53,11 +53,3 @@
   .update-game-form button:hover {
     background-color: #ffcc00;
   }
-  
-  .loading {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 50px;
-    color: #FEE715;
-  }
-  

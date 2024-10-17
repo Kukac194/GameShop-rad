@@ -51,6 +51,17 @@ const ProizvodacService = {
     }
   },
 
+  dohvatiProizvodaceIzDrzave: async (drzavaId) => {
+    try {
+      const response = await axiosInstance.get(`/proizvodaci/drzave/${drzavaId}`);
+      return response.data;
+    }
+    catch(error) {
+      console.error(`Greška prilikom dohvaćanja proizvođača sa ID-em države${drzavaId}:`, error);
+      throw error;
+    }
+  },
+
   obrisiProizvodaca: async (id) => {
     try {
       const response = await axiosInstance.delete(`/proizvodaci/${id}`);

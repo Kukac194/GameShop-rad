@@ -12,23 +12,21 @@ function AzurirajIgricuForma() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    IgricaService.dohvatiIgricuPoIdu(id)
-      .then(response => {
-        setGame(response);
+    const fetchData = async () => {
+      try {
+        const gameResponse = await IgricaService.dohvatiIgricuPoIdu(id);
+        setGame(gameResponse);
         setLoading(false);
-      })
-      .catch(error => {
-        console.error('Greška prilikom dohvaćanja igrice:', error);
+  
+        const proizvodaciResponse = await ProizvodacService.dohvatiSveProizvodace();
+        setProizvodaci(proizvodaciResponse);
+      } catch (error) {
+        console.error('Greška prilikom dohvaćanja podataka:', error);
         setLoading(false);
-      });
-
-    ProizvodacService.dohvatiSveProizvodace()
-      .then(response => {
-        setProizvodaci(response);
-      })
-      .catch(error => {
-        console.error('Greška prilikom dohvaćanja proizvođača:', error);
-      });
+      }
+    };
+  
+    fetchData();
   }, [id]);
 
   const handleChange = (e) => {

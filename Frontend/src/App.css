@@ -7,14 +7,24 @@
 body {
     margin: 0;
     padding: 0;
+    background: #fee715af;
 }
 
 a {
     text-decoration: none;
-    color: #101820;
+    color: #007BFF;
     transition:  all .2s;
+    font-weight: bold;
   }
   
   a:hover {
-    color: #0a65c0;
+    color: #FF5733;
+  }
+
+  .loading, .error {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    color: #101820;
+    font-weight: bold;
   }

@@ -6,9 +6,7 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar">
-        <div className="logo">
-          <h1>Logo</h1>
-        </div>
+          <div className='logo'/>
         <div className="nav-container">
           <div className="nav-left">
             <ul className="nav-list">

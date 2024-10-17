@@ -11,16 +11,20 @@ function KreirajIgricuForma() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    ProizvodacService.dohvatiSveProizvodace()
-      .then(response => {
+    const fetchProizvodaci = async () => {
+      try {
+        const response = await ProizvodacService.dohvatiSveProizvodace();
         setProizvodaci(response);
         setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Greška prilikom dohvaćanja proizvođača:', error);
         setLoading(false);
-      });
+      }
+    };
+  
+    fetchProizvodaci();
   }, []);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;

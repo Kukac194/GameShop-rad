@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import IgricaService from '../../services/IgricaService';
+import ProizvodacService from '../../services/ProizvodacService';
 import { Link, useParams } from 'react-router-dom';
 import '../Igrice/IgriceLista.css';
 
 function IgriceProizvodac() {
     const { id } = useParams();
-    const [games, setGames] = useState([]);
+    const [proizvodaci, setProizvodaci] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
   
     useEffect(() => {
-      const fetchGames = async () => {
+      const fetchProizvodaci = async () => {
         try {
-          const data = await IgricaService.dohvatiSveIgriceProizvodaca(id);
-          setGames(data);
+          const data = await ProizvodacService.dohvatiProizvodaceIzDrzave(id);
+          setProizvodaci(data);
           setLoading(false);
         } catch (err) {
-          console.error("Greška prilikom dohvaćanja igrica:", err);
-          setError('Greška prilikom dohvaćanja igrica');
+          console.error("Greška prilikom dohvaćanja proizvođača:", err);
+          setError('Greška prilikom dohvaćanja proizvođača');
           setLoading(false);
         }
       };
   
-      fetchGames();
+      fetchProizvodaci();
     }, []);
   
-    const filteredGames = games.filter(game =>
-      game.naslov.toLowerCase().includes(searchQuery.toLowerCase())
+    const filteredProizvodaci = proizvodaci.filter(p =>
+      p.ime.toLowerCase().includes(searchQuery.toLowerCase())
     );
   
     if (loading) return <div className="loading">Učitavanje...</div>;
@@ -35,23 +35,21 @@ function IgriceProizvodac() {
   
     return (
       <div className="game-list-container">
-        <h1 className="title">Popis Igrica</h1>
+        <h1 className="title">Popis proizvođača</h1>
         
         <input
           type="text"
-          placeholder="Pretraži igre po naslovu"
+          placeholder="Pretraži proizvođača po imenu"
           className="search-bar"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         
         <ul className="game-list">
-          {filteredGames.length > 0 ? (
-            filteredGames.map((game) => (
-              <li key={game.id} className="game-item">
-                <strong><h2 className="game-title"><Link to={`/igrice/${game.id}`}>{game.naslov}</Link></h2></strong>
-                <p className="game-price">Cijena: {game.cijena} €</p>
-                
+          {filteredProizvodaci.length > 0 ? (
+            filteredProizvodaci.map((p) => (
+              <li key={p.id} className="game-item">
+                <h3 className="game-title-first">{p.ime}</h3>
               </li>
             ))
           ) : (

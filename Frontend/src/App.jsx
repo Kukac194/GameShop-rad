@@ -8,6 +8,8 @@ import AzurirajIgricuForma from './components/Igrice/AzurirajIgricuForma';
 import KreirajIgricuForma from './components/Igrice/KreirajIgricuForma';
 import PopisProizvodaca from './components/Proizvodaci/PopisProizvodaca';
 import IgriceProizvodac from './components/Proizvodaci/IgriceProizvodac';
+import ListaDrzava from './components/Drzave/ListaDrzava';
+import ListaProizvodacaIzDrzave from './components/Drzave/ListaProizvodacaIzDrzave';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/nova-igrica" element={<KreirajIgricuForma />} />
         <Route path="/proizvodaci" element={<PopisProizvodaca />} />
         <Route path="/proizvodaci/:id/igrice" element={<IgriceProizvodac />} />
+        <Route path="/drzave" element={<ListaDrzava />}/>
+        <Route path="/proizvodaci/drzave/:id" element={<ListaProizvodacaIzDrzave />}/>
 
       </Routes>
     </Router>
