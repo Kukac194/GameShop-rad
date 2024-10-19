@@ -46,19 +46,33 @@ function IgricaDetalji() {
     fetchData();
   }, [id]);
 
-  const handleDelete = (recenzijaId) => {
-    const confirmDelete = window.confirm('Jeste li sigurni da želite obrisati ovu recenziju?');
-    if (confirmDelete) {
-      RecenzijeService.obrisiRecenziju(recenzijaId)
-        .then(() => {
-          alert('Recenzija uspješno obrisana.');
-          setRecenzije(recenzije.filter(r => r.id !== recenzijaId));
-        })
-        .catch(error => {
-          console.error('Greška prilikom brisanja recenzije:', error);
-        });
-    }
-  };
+const handleDeleteReview = (recenzijaId) => {
+  const confirmDelete = window.confirm('Jeste li sigurni da želite obrisati ovu recenziju?');
+  if (confirmDelete) {
+    RecenzijeService.obrisiRecenziju(recenzijaId)
+      .then(() => {
+        alert('Recenzija uspješno obrisana.');
+        setRecenzije(recenzije.filter(r => r.id !== recenzijaId));
+      })
+      .catch(error => {
+        console.error('Greška prilikom brisanja recenzije:', error);
+      });
+  }
+};
+
+const handleDeleteGame = () => {
+  const confirmDelete = window.confirm('Jeste li sigurni da želite obrisati ovu igricu?');
+  if (confirmDelete) {
+    IgricaService.obrisiIgricu(id)
+      .then(() => {
+        alert('Igrica uspješno obrisana.');
+        navigate('/igrice');
+      })
+      .catch(error => {
+        console.error('Greška prilikom brisanja igrice:', error);
+      });
+  }
+};
 
   const handleEditClick = (recenzija) => {
     setEditingReviewId(recenzija.id);
@@ -139,45 +153,45 @@ function IgricaDetalji() {
       <div className="recenzije">
         <h3>Recenzije:</h3>
         <ul className="recenzije-list">
-          {recenzije.map(r => (
-            <li key={r.id} className="recenzija-item">
-              {editingReviewId === r.id ? (
-                <form onSubmit={(e) => handleEditSubmit(e, r.id)} className="edit-form">
-                  <input
-                    type="text"
-                    value={editText}
-                    onChange={(e) => setEditText(e.target.value)}
-                    required
-                  />
-                  <button type="submit">Spremi</button>
-                </form>
-              ) : (
-                <p className="recenzija-text">{r.recenzija}</p>
-              )}
-              <span 
-                className="delete-icon"
-                onClick={() => handleDelete(r.id)} 
-                style={{ cursor: 'pointer', color: 'red', marginLeft: '10px' }}
-                title="Obriši recenziju"
-              >
-                ❌
-              </span>
-              <span 
-                className="update-icon"
-                onClick={() => handleEditClick(r)} 
-                style={{ cursor: 'pointer', marginLeft: '10px' }}
-                title="Ažuriraj recenziju"
-              >
-                ✏️
-              </span>
-            </li>
-          ))}
-        </ul>
+  {recenzije.map(r => (
+    <li key={r.id} className="recenzija-item">
+      {editingReviewId === r.id ? (
+        <form onSubmit={(e) => handleEditSubmit(e, r.id)} className="edit-form">
+          <input
+            type="text"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+            required
+          />
+          <button type="submit">Spremi</button>
+        </form>
+      ) : (
+        <p className="recenzija-text">{r.recenzija}</p>
+      )}
+      <span 
+        className="delete-icon"
+        onClick={() => handleDeleteReview(r.id)}
+        style={{ cursor: 'pointer', color: 'red', marginLeft: '10px' }}
+        title="Obriši recenziju"
+      >
+        ❌
+      </span>
+      <span 
+        className="update-icon"
+        onClick={() => handleEditClick(r)} 
+        style={{ cursor: 'pointer', marginLeft: '10px' }}
+        title="Ažuriraj recenziju"
+      >
+        ✏️
+      </span>
+    </li>
+  ))}
+</ul>
       </div>
 
       <div className="action-buttons">
         <button className="update-button" onClick={() => navigate(`/azuriraj-igricu/${id}`)}>Ažuriraj</button>
-        <button className="delete-button" onClick={handleDelete}>Obriši</button>
+        <button className="delete-button" onClick={handleDeleteGame}>Obriši Igricu</button>
       </div>
     </div>
   );

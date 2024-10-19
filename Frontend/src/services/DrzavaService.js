@@ -1,6 +1,7 @@
 import axios from 'axios';
+import constants from '../assets/constants.js';
 
-const API_BASE_URL = 'https://kukac194-001-site1.jtempurl.com/api';
+const API_BASE_URL = constants.API_URL;
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
