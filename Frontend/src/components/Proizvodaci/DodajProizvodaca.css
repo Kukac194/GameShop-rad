@@ -1,0 +1,67 @@
+.create-manufacturer-form {
+    background-color: #101820;
+    color: #FEE715;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.create-manufacturer-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.create-manufacturer-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.create-manufacturer-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 2px solid #FEE715;
+    border-radius: 5px;
+    background-color: #101820;
+    color: #FEE715;
+    outline: none;
+}
+
+.create-manufacturer-form input:focus {
+    border-color: #FEE715;
+}
+
+.create-manufacturer-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FEE715;
+    color: #101820;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-manufacturer-form button:hover {
+    background-color: #ffcc00;
+}
+
+.create-manufacturer-form select,
+.update-manufacturer-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 2px solid #FEE715;
+    border-radius: 5px;
+    background-color: #101820;
+    color: #FEE715;
+    cursor: pointer;
+}
+

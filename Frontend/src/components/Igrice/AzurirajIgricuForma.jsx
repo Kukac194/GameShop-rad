@@ -55,7 +55,7 @@ function AzurirajIgricuForma() {
 
   return (
     <div className="update-game-form">
-      <h1>Ažuriraj Igricu</h1>
+      <h1>Ažuriraj igricu</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Naslov:

@@ -34,8 +34,10 @@ function ListaIgrica() {
   
     return (
       <div className="game-list-container">
+        <div className='c'>
         <h1 className="title">Popis Igrica</h1>
-        
+       <Link to="/nova-igrica" className='add-button'>Dodaj novu igricu</Link>
+        </div>
         <input
           type="text"
           placeholder="Pretraži igre po naslovu"

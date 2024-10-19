@@ -30,7 +30,13 @@
     list-style-type: none;
     padding: 0;
   }
-  
+  .c {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
   .game-item {
     background-color: #FEE715;
     color: #101820;

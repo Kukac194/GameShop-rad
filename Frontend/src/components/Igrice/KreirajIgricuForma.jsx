@@ -52,7 +52,7 @@ function KreirajIgricuForma() {
 
   return (
     <div className="create-game-form">
-      <h1>Kreiraj Novu Igricu</h1>
+      <h1>Kreiraj novu igricu</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Naslov:

@@ -10,6 +10,9 @@ import PopisProizvodaca from './components/Proizvodaci/PopisProizvodaca';
 import IgriceProizvodac from './components/Proizvodaci/IgriceProizvodac';
 import ListaDrzava from './components/Drzave/ListaDrzava';
 import ListaProizvodacaIzDrzave from './components/Drzave/ListaProizvodacaIzDrzave';
+import KreirajProizvodacaForma from './components/Proizvodaci/KreirajProizvodacaForma';
+import AzurirajProizvodacaForma from './components/Proizvodaci/AzurirajProizvodacaForma';
+
 
 function App() {
   return (
@@ -25,7 +28,8 @@ function App() {
         <Route path="/proizvodaci/:id/igrice" element={<IgriceProizvodac />} />
         <Route path="/drzave" element={<ListaDrzava />}/>
         <Route path="/proizvodaci/drzave/:id" element={<ListaProizvodacaIzDrzave />}/>
-
+        <Route path="/proizvodaci/dodaj-proizvodaca" element={<KreirajProizvodacaForma />}/>
+        <Route path="/proizvodaci/:id/azuriraj" element={<AzurirajProizvodacaForma />}/>
       </Routes>
     </Router>
   )

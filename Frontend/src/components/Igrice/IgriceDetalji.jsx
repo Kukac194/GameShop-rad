@@ -121,6 +121,7 @@ const handleDeleteGame = () => {
     <div className="game-details">
       <div className="game-header">
         <h1 className="game-title">{game.naslov}</h1>
+        <p className='game-title'>{game.cijena} €</p>
         <button 
           className="add-review-button" 
           onClick={() => setIsAddingReview(!isAddingReview)}

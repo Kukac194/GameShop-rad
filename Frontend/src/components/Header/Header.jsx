@@ -19,9 +19,6 @@ function Header() {
               <Link to="/igrice">Popis Igrica</Link>
             </li>
             <li className="nav-item">
-              <Link to="/nova-igrica">Dodaj novu igricu</Link>
-            </li>
-            <li className="nav-item">
               <Link to="/proizvodaci">Popis proizvođača</Link>
             </li>
             <li className="nav-item">

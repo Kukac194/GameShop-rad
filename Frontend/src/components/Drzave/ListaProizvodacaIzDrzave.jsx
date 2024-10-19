@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProizvodacService from '../../services/ProizvodacService';
+import DrzavaService from '../../services/DrzavaService';
 import { Link, useParams } from 'react-router-dom';
 import '../Igrice/IgriceLista.css';
 
@@ -22,7 +23,6 @@ function IgriceProizvodac() {
           setLoading(false);
         }
       };
-  
       fetchProizvodaci();
     }, []);
   
@@ -49,7 +49,7 @@ function IgriceProizvodac() {
           {filteredProizvodaci.length > 0 ? (
             filteredProizvodaci.map((p) => (
               <li key={p.id} className="game-item">
-                <h3 className="game-title-first">{p.ime}</h3>
+                <h3 className="game-title-first"><Link to={`/proizvodaci/${p.id}/igrice`}>{p.ime}</Link></h3>
               </li>
             ))
           ) : (
