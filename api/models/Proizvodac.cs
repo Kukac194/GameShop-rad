@@ -16,6 +16,6 @@ namespace api.models
         [ForeignKey("drzavaId")]
         public Drzava? drzava { get; set; }
 
-        public ICollection<Igrica>? igre { get; set; }
+        public ICollection<Igrica> igre { get; set; } = new List<Igrica>();
     }
 }

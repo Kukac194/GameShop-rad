@@ -1,29 +1,46 @@
+SELECT name, collation_name FROM sys.databases;
+
+GO
+ALTER DATABASE db_a98acf_tjakopec
+SET
+    SINGLE_USER
+WITH
+ROLLBACK IMMEDIATE;
+
+GO ALTER DATABASE db_a98acf_tjakopec COLLATE Croatian_CI_AS;
+
+GO ALTER DATABASE db_a98acf_tjakopec SET MULTI_USER;
+
+GO SELECT name, collation_name FROM sys.databases;
+
+GO
+
 CREATE TABLE drzava (
     id INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    naziv VARCHAR(255) NOT NULL
+    naziv VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE proizvodac (
     id INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    ime VARCHAR(255) NOT NULL,
+    ime VARCHAR(255) NOT NULL UNIQUE,
     drzavaId INT NOT NULL,
-    FOREIGN KEY (drzavaId) REFERENCES drzava (id)
+    FOREIGN KEY (drzavaId) REFERENCES drzava (id) ON DELETE CASCADE
 );
 
 CREATE TABLE igrica (
     id INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    naslov VARCHAR(255) NOT NULL,
+    naslov VARCHAR(255) NOT NULL UNIQUE,
     cijena DECIMAL(10, 2) NOT NULL,
     proizvodacId INT NOT NULL,
     godinaIzdanja INT NOT NULL,
-    FOREIGN KEY (proizvodacId) REFERENCES proizvodac (id)
+    FOREIGN KEY (proizvodacId) REFERENCES proizvodac (id) ON DELETE CASCADE
 );
 
 CREATE TABLE recenzija (
     id INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    recenzija VARCHAR(255) NOT NULL,
+    recenzija VARCHAR(255) NOT NULL UNIQUE,
     igricaId INT NOT NULL,
-    FOREIGN KEY (igricaId) REFERENCES igrica (id)
+    FOREIGN KEY (igricaId) REFERENCES igrica (id) ON DELETE CASCADE
 );
 
 INSERT INTO
@@ -64,7 +81,7 @@ VALUES (
         2020
     ),
     (
-        'Assassin\'s Creed Valhalla',
+        'Assassins Creed Valhalla',
         49.99,
         4,
         2020
