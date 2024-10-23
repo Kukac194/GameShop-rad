@@ -9,13 +9,6 @@ function Header() {
       <nav className="navbar">
         <div className="nav-left">
           <div className="logo" />
-          <a href={constants.SWAGGER} target="_blank" rel="noopener noreferrer" className="swagger-link">
-            <img
-            className='swagger-logo'
-            src="../src/assets/swagger.svg" 
-            alt="Swagger" 
-            />
-          </a>
         </div>
         <div className="nav-right">
           <ul className="nav-list">
@@ -30,6 +23,13 @@ function Header() {
             </li>
           </ul>
         </div>
+        <a href={constants.SWAGGER} target="_blank" rel="noopener noreferrer" className="swagger-link">
+            <img
+            className='swagger-logo'
+            src="../src/assets/swagger.png" 
+            alt="Swagger" 
+            />
+          </a>
       </nav>
     </header>
   );

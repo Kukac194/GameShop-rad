@@ -13,8 +13,8 @@
 }
 
 .swagger-logo {
-  width: 200px;
-  height: 125px;
+  width: 80px;
+  height: 80px;
 }
 
 .logo {
@@ -31,6 +31,7 @@
 .nav-left {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .swagger-link {
