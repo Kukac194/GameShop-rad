@@ -23,13 +23,7 @@ function Header() {
             </li>
           </ul>
         </div>
-        <a href={constants.SWAGGER} target="_blank" rel="noopener noreferrer" className="swagger-link">
-            <img
-            className='swagger-logo'
-            src="../src/assets/swagger.png" 
-            alt="Swagger" 
-            />
-          </a>
+        <a href={constants.SWAGGER} target="_blank" rel="noopener noreferrer" className="swagger-link">Swagger</a>
       </nav>
     </header>
   );
