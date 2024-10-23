@@ -10,7 +10,11 @@ function Header() {
         <div className="nav-left">
           <div className="logo" />
           <a href={constants.SWAGGER} target="_blank" rel="noopener noreferrer" className="swagger-link">
-            Swagger
+            <img
+            className='swagger-logo'
+            src="../src/assets/swagger.svg" 
+            alt="Swagger" 
+            />
           </a>
         </div>
         <div className="nav-right">

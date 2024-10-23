@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ProizvodacService from '../../services/ProizvodacService';
 import DrzavaService from '../../services/DrzavaService';
 import './AzurirajProizvodaca.css';
+import '../Utils/spinner.css';
 
 function AzurirajProizvodaca() {
     const { id } = useParams();
@@ -55,7 +56,7 @@ function AzurirajProizvodaca() {
         }
     };
 
-    if (loading) return <div className="loading">Učitavanje...</div>;
+    if (loading) return <div className="spinner"></div>;
 
     return (
         <div className="update-manufacturer-form">

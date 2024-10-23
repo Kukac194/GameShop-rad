@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProizvodacService from '../../services/ProizvodacService';
 import { Link, useNavigate } from 'react-router-dom';
 import './PopisProizvodaca.css';
+import '../Utils/spinner.css';
 
 function ListaProizvodaca() {
     const [proizvodaci, setProizvodaci] = useState([]);
@@ -42,7 +43,7 @@ function ListaProizvodaca() {
         proizvodac.ime.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    if (loading) return <div className="loading">Učitavanje...</div>;
+    if (loading) return <div className="spinner"></div>;
     if (error) return <div className="error">{error}</div>;
 
     return (

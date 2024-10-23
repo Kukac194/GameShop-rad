@@ -5,6 +5,7 @@ import ProizvodacService from '../../services/ProizvodacService';
 import RecenzijeService from '../../services/RecenzijeService';
 import DrzavaService from '../../services/DrzavaService';
 import './IgriceDetalji.css';
+import '../Utils/spinner.css';
 
 function IgricaDetalji() {
   const { id } = useParams();
@@ -110,7 +111,7 @@ const handleDeleteGame = () => {
   };
 
   if (loading) {
-    return <div className="loading">Učitavanje...</div>;
+    return <div className="spinner"></div>;
   }
 
   if (!game) {
@@ -120,7 +121,7 @@ const handleDeleteGame = () => {
   return (
     <div className="game-details">
       <div className="game-header">
-        <h1 className="game-title">{game.naslov}</h1>
+        <h1 className="game-title">{game.naslov} ({game.godinaIzdanja})</h1>
         <p className='game-title'>{game.cijena} €</p>
         <button 
           className="add-review-button" 

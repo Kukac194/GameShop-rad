@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import IgricaService from '../../services/IgricaService';
 import ProizvodacService from '../../services/ProizvodacService';
 import './KreirajIgricuForma.css';
+import '../Utils/spinner.css';
 
 function KreirajIgricuForma() {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ function KreirajIgricuForma() {
   };
 
   if (loading) {
-    return <div className="loading">Učitavanje...</div>;
+    return <div className="spinner"></div>;
   }
 
   return (

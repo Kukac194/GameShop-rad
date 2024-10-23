@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import IgricaService from '../../services/IgricaService';
 import { Link, useParams } from 'react-router-dom';
 import '../Igrice/IgriceLista.css';
+import '../Utils/spinner.css';
 
 function IgriceProizvodac() {
     const { id } = useParams();
@@ -30,7 +31,7 @@ function IgriceProizvodac() {
       game.naslov.toLowerCase().includes(searchQuery.toLowerCase())
     );
   
-    if (loading) return <div className="loading">Učitavanje...</div>;
+    if (loading) return <div className="spinner"></div>;
     if (error) return <div className="error">{error}</div>;
   
     return (

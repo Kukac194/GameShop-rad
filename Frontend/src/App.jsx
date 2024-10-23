@@ -12,7 +12,9 @@ import ListaDrzava from './components/Drzave/ListaDrzava';
 import ListaProizvodacaIzDrzave from './components/Drzave/ListaProizvodacaIzDrzave';
 import KreirajProizvodacaForma from './components/Proizvodaci/KreirajProizvodacaForma';
 import AzurirajProizvodacaForma from './components/Proizvodaci/AzurirajProizvodacaForma';
-
+import KreirajDrzavu from './components/Drzave/KreirajDrzavu';
+import AzurirajDrzavuForma from './components/Drzave/AzurirajDrzavuForma';
+import constants from './assets/constants.js';
 
 function App() {
   return (
@@ -20,16 +22,19 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/" />} />
-        <Route path="/igrice" element={<IgricaLista />} />
-        <Route path="/igrice/:id" element={<IgriceDetalji />} />
-        <Route path="/azuriraj-igricu/:id" element={<AzurirajIgricuForma />} />
-        <Route path="/nova-igrica" element={<KreirajIgricuForma />} />
-        <Route path="/proizvodaci" element={<PopisProizvodaca />} />
-        <Route path="/proizvodaci/:id/igrice" element={<IgriceProizvodac />} />
-        <Route path="/drzave" element={<ListaDrzava />}/>
-        <Route path="/proizvodaci/drzave/:id" element={<ListaProizvodacaIzDrzave />}/>
-        <Route path="/proizvodaci/dodaj-proizvodaca" element={<KreirajProizvodacaForma />}/>
-        <Route path="/proizvodaci/:id/azuriraj" element={<AzurirajProizvodacaForma />}/>
+        <Route path={constants.IGRICE.SVE_IGRICE} element={<IgricaLista />} />
+        <Route path={constants.IGRICE.IGRICA_ID} element={<IgriceDetalji />} />
+        <Route path={constants.IGRICE.AZURIRAJ_IGRICU} element={<AzurirajIgricuForma />} />
+        <Route path={constants.IGRICE.NOVA_IGRICA} element={<KreirajIgricuForma />} />
+        <Route path={constants.PROIZVODACI.SVI_PROIZVODACI} element={<PopisProizvodaca />} />
+        <Route path={constants.IGRICE.PROIZVODACI} element={<IgriceProizvodac />} />
+        <Route path={constants.DRZAVE.SVE_DRZAVE} element={<ListaDrzava />}/>
+        <Route path={constants.PROIZVODACI.PROIZVODACI_DRZAVE} element={<ListaProizvodacaIzDrzave />}/>
+        <Route path={constants.PROIZVODACI.NOVI_PROIZVODAC} element={<KreirajProizvodacaForma />}/>
+        <Route path={constants.PROIZVODACI.AZURIRAJ_PROIZVODACA} element={<AzurirajProizvodacaForma />}/>
+        <Route path={constants.DRZAVE.NOVA_DRZAVA} element={<KreirajDrzavu />}/>
+        <Route path={constants.DRZAVE.AZURIRAJ_DRZAVU} element={<AzurirajDrzavuForma />}/>
+
       </Routes>
     </Router>
   )

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import IgricaService from '../../services/IgricaService';
 import ProizvodacService from '../../services/ProizvodacService';
 import './AzurirajIgricuForma.css';
+import '../Utils/spinner.css';
 
 function AzurirajIgricuForma() {
   const { id } = useParams();
@@ -50,7 +51,7 @@ function AzurirajIgricuForma() {
   };
 
   if (loading) {
-    return <div className="loading">Učitavanje...</div>;
+    return <div className="spinner"></div>;
   }
 
   return (
