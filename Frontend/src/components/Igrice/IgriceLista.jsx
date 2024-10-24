@@ -36,9 +36,10 @@ function ListaIgrica() {
     return (
       <div className="game-list-container">
         <div className='c'>
-        <h1 className="title">Popis Igrica</h1>
-       <Link to="/nova-igrica" className='add-button'>Dodaj novu igricu</Link>
+          <h1 className="title">Popis Igrica</h1>
+          <Link to="/nova-igrica" className='add-button'>Dodaj novu igricu</Link>
         </div>
+        
         <input
           type="text"
           placeholder="Pretraži igre po naslovu"
@@ -47,21 +48,34 @@ function ListaIgrica() {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         
-        <ul className="game-list">
+        <div className="game-list">
           {filteredGames.length > 0 ? (
-            filteredGames.map((game) => (
-              <li key={game.id} className="game-item">
-                <strong><h2 className="game-title-first"><Link to={`/igrice/${game.id}`}>{game.naslov}</Link></h2></strong>
-                <p className="game-producer">Proizvođač ID: {game.proizvodacId}</p>
-                <p className='game-price'>Godina izdanja: {game.godinaIzdanja}</p>
-                <p className="game-price">Cijena: {game.cijena} €</p>
-                
-              </li>
+            filteredGames.reduce((rows, game, index) => {
+              if (index % 2 === 0) {
+                rows.push([]);
+              }
+              rows[rows.length - 1].push(game);
+              return rows;
+            }, []).map((row, rowIndex) => (
+              <div className="game-row" key={rowIndex}>
+                {row.map((game) => (
+                  <div key={game.id} className="game-item">
+                    <strong>
+                      <h2 className="game-title-first">
+                        <Link to={`/igrice/${game.id}`}>{game.naslov}</Link>
+                      </h2>
+                    </strong>
+                    <img className="game-picture" src={game.slika} alt={game.naslov} />
+                    <p className='game-price'>Godina izdanja: {game.godinaIzdanja}</p>
+                    <p className="game-price">Cijena: {game.cijena} €</p>
+                  </div>
+                ))}
+              </div>
             ))
           ) : (
-            <li className="no-results">Nema rezultata za pretragu</li>
+            <div className="no-results">Nema rezultata za pretragu</div>
           )}
-        </ul>
+        </div>
       </div>
     );
 }

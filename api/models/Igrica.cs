@@ -14,6 +14,8 @@ namespace api.models
         public decimal? cijena { get; set; }
         public int? godinaIzdanja { get; set; }
 
+        public string? slika { get; set; }
+
         public int? ProizvodacId { get; set; }
 
         [ForeignKey("ProizvodacId")]

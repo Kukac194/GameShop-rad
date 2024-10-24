@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/KlEnnzN+LBM1IF+1JWK26fzYO2vQJKOykHgN9nHsK4=",
+  "Hash": "QHVaynFACppxPNt0IAmdzu+5Qn0rDK6h90CJX3zbLUY=",
   "Source": "api",
   "BasePath": "_content/api",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\index-C_q6PSd-.js",
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\index-Crm17W4f.css",
       "SourceId": "api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
       "BasePath": "_content/api",
-      "RelativePath": "assets/index-C_q6PSd-.js",
+      "RelativePath": "assets/index-Crm17W4f.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-C_q6PSd-.js"
+      "OriginalItemSpec": "wwwroot\\assets\\index-Crm17W4f.css"
     },
     {
-      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\index-C0ZEg72o.css",
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\index-CYb8O-Ps.js",
       "SourceId": "api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
       "BasePath": "_content/api",
-      "RelativePath": "assets/index-C0ZEg72o.css",
+      "RelativePath": "assets/index-CYb8O-Ps.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,15 +52,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-C0ZEg72o.css"
+      "OriginalItemSpec": "wwwroot\\assets\\index-CYb8O-Ps.js"
     },
     {
-      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\logo-C4COSWqj.png",
+      "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\assets\\logo-DVVx78XP.png",
       "SourceId": "api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\",
       "BasePath": "_content/api",
-      "RelativePath": "assets/logo-C4COSWqj.png",
+      "RelativePath": "assets/logo-DVVx78XP.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,7 +71,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\logo-C4COSWqj.png"
+      "OriginalItemSpec": "wwwroot\\assets\\logo-DVVx78XP.png"
     },
     {
       "Identity": "C:\\Users\\Kukac\\Desktop\\GameShop-rad\\api\\wwwroot\\index.html",

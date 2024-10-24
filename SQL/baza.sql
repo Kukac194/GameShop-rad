@@ -1,15 +1,15 @@
 SELECT name, collation_name FROM sys.databases;
 
 GO
-ALTER DATABASE db_a98acf_tjakopec
+ALTER DATABASE db_aae4b9_kukac194
 SET
     SINGLE_USER
 WITH
 ROLLBACK IMMEDIATE;
 
-GO ALTER DATABASE db_a98acf_tjakopec COLLATE Croatian_CI_AS;
+GO ALTER DATABASE db_aae4b9_kukac194 COLLATE Croatian_CI_AS;
 
-GO ALTER DATABASE db_a98acf_tjakopec SET MULTI_USER;
+GO ALTER DATABASE db_aae4b9_kukac194 SET MULTI_USER;
 
 GO SELECT name, collation_name FROM sys.databases;
 
@@ -32,6 +32,7 @@ CREATE TABLE igrica (
     naslov VARCHAR(255) NOT NULL UNIQUE,
     cijena DECIMAL(10, 2) NOT NULL,
     proizvodacId INT NOT NULL,
+    slika VARCHAR(255) NOT NULL,
     godinaIzdanja INT NOT NULL,
     FOREIGN KEY (proizvodacId) REFERENCES proizvodac (id) ON DELETE CASCADE
 );
@@ -66,34 +67,63 @@ INSERT INTO
         naslov,
         cijena,
         proizvodacId,
+        slika,
         godinaIzdanja
     )
 VALUES (
         'The Witcher 3',
         39.99,
         5,
+        'https://pbs.twimg.com/media/E531CN9WQAMmK-h.jpg',
         2015
     ),
     (
         'Cyberpunk 2077',
         59.99,
         5,
+        'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2e28c8106320809.5f8d9ca886d3a.jpg',
         2020
     ),
     (
         'Assassins Creed Valhalla',
         49.99,
         4,
+        'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3dc99197430171.5ec4f32669f2f.jpg',
         2020
     ),
-    ('FIFA 23', 69.99, 3, 2022),
-    ('Overwatch 2', 39.99, 6, 2022),
-    ('Crysis 3', 29.99, 7, 2013),
-    ('God of War', 59.99, 2, 2018),
+    (
+        'FIFA 23',
+        69.99,
+        3,
+        'https://assetsio.gnwcdn.com/fifa-main-2.png',
+        2022
+    ),
+    (
+        'Overwatch 2',
+        39.99,
+        6,
+        'https://sahsponyexpress.com/wp-content/uploads/2022/10/overwatch-2-button-fin-1656022954568.jpg',
+        2022
+    ),
+    (
+        'Crysis 3',
+        29.99,
+        7,
+        'https://assets-prd.ignimgs.com/2021/12/30/crysis-3-button-1640896543145.jpg',
+        2013
+    ),
+    (
+        'God of War',
+        59.99,
+        2,
+        'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/05/God-of-War-Ragnarok.jpeg',
+        2018
+    ),
     (
         'The Legend of Zelda: Breath of the Wild',
         59.99,
         1,
+        'https://cdn.mobygames.com/covers/8437192-the-legend-of-zelda-breath-of-the-wild-nintendo-switch-front-cov.jpg',
         2017
     );
 

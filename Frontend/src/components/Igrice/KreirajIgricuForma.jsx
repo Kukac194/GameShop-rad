@@ -85,6 +85,16 @@ function KreirajIgricuForma() {
             required
           />
         </label>
+        <label>
+          URL slike:
+          <input
+            type="text"
+            name="slika"
+            value={game.slika}
+            onChange={handleChange}
+            required
+          />
+        </label>
           Proizvođač:
           <select
             name="proizvodacId"

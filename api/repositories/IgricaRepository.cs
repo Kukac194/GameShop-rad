@@ -40,6 +40,7 @@ namespace api.repositories
             igrica.naslov = igricaDto.naslov;
             igrica.cijena = igricaDto.cijena;
             igrica.godinaIzdanja = igricaDto.godinaIzdanja;
+            igrica.slika = igricaDto.slika;
             igrica.ProizvodacId = igricaDto.ProizvodacId;
             _context.SaveChanges();
 
@@ -85,6 +86,7 @@ namespace api.repositories
             igrica.naslov = igricaDto.naslov;
             igrica.cijena = igricaDto.cijena;
             igrica.godinaIzdanja = igricaDto.godinaIzdanja;
+            igrica.slika = igricaDto.slika;
             igrica.ProizvodacId = igricaDto.ProizvodacId;
 
             _context.Igrica.Add(igrica);

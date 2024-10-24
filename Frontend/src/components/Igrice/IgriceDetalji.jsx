@@ -25,7 +25,7 @@ function IgricaDetalji() {
       try {
         const gameResponse = await IgricaService.dohvatiIgricuPoIdu(id);
         setGame(gameResponse);
-
+        
         const manufacturerResponse = await ProizvodacService.dohvatiProizvodacaPoIdu(gameResponse.proizvodacId);
         setManufacturer(manufacturerResponse);
 
@@ -122,6 +122,7 @@ const handleDeleteGame = () => {
     <div className="game-details">
       <div className="game-header">
         <h1 className="game-title">{game.naslov} ({game.godinaIzdanja})</h1>
+        <img className="game-picture-detailed" src={game.slika} alt={game.naslov} />
         <p className='game-title'>{game.cijena} €</p>
         <button 
           className="add-review-button" 

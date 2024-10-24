@@ -11,6 +11,8 @@ namespace api.dto.IgricaDtos
         public string? naslov { get; set; }
         public decimal? cijena { get; set; }
         public int? godinaIzdanja { get; set; }
+
+        public string? slika { get; set; }
         public int? ProizvodacId { get; set; }
     }
 }
