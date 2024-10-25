@@ -15,6 +15,7 @@ import AzurirajProizvodacaForma from './components/Proizvodaci/AzurirajProizvoda
 import KreirajDrzavu from './components/Drzave/KreirajDrzavu';
 import AzurirajDrzavuForma from './components/Drzave/AzurirajDrzavuForma';
 import constants from './assets/constants.js';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path={constants.DRZAVE.AZURIRAJ_DRZAVU} element={<AzurirajDrzavuForma />}/>
 
       </Routes>
+      <Footer></Footer>
     </Router>
   )
 }

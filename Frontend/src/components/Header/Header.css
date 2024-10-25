@@ -35,17 +35,22 @@
 }
 
 .swagger-link {
-  color: #85EA2D;
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  background-color: #6fe408;
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   margin-left: 20px;
   text-decoration: none;
   transition: color 0.3s ease;
+  border-radius: 10px;
 }
 
 .swagger-link:hover {
-  color: #ffffff;
+  background-color: #fff;
+  color: #6fe408;
 }
 
 .nav-right {

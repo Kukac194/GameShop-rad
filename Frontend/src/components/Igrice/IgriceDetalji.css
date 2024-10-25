@@ -110,6 +110,7 @@
   .delete-icon,
   .update-icon {
     font-size: 1.2em;
+    cursor: pointer;
   }
   .edit-form {
     display: flex;
