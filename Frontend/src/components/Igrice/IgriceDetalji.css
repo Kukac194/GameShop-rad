@@ -1,13 +1,32 @@
 .game-details {
-    background-color: #101820;
-    color: #FEE715;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: auto;
-    margin-top: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
+  background-color: #101820;
+  color: #FEE715;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.game-image {
+  flex: 1 1 300px;
+}
+
+.game-picture-detailed {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.game-info {
+  flex: 2 1 400px;
+}
   
   .game-header {
     border-bottom: 2px solid #FEE715;
@@ -16,13 +35,13 @@
   }
   
   .game-title {
-    color: #FEE715 !important;
-    font-size: 2.2rem;
-    margin: 0;
+    color: #FEE715;
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
   }
   
   .game-price {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 10px;
   }
   

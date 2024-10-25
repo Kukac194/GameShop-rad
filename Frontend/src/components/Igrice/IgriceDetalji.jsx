@@ -120,29 +120,32 @@ const handleDeleteGame = () => {
 
   return (
     <div className="game-details">
-      <div className="game-header">
-        <h1 className="game-title">{game.naslov} ({game.godinaIzdanja})</h1>
-        <img className="game-picture-detailed" src={game.slika} alt={game.naslov} />
-        <p className='game-title'>{game.cijena} €</p>
-        <button 
-          className="add-review-button" 
-          onClick={() => setIsAddingReview(!isAddingReview)}
-          style={{ marginLeft: '10px' }}
-        >
-          Dodaj recenziju
-        </button>
-        {isAddingReview && (
-          <form onSubmit={handleAddReview} className="add-review-form">
-            <input
-              type="text"
-              value={newReviewText}
-              onChange={(e) => setNewReviewText(e.target.value)}
-              required
-              placeholder="Unesite recenziju"
-            />
-            <button type="submit">Spremi</button>
-          </form>
-        )}
+      <div className="game-content">
+        <div className="game-image">
+          <img className="game-picture-detailed" src={game.slika} alt={game.naslov} />
+        </div>
+        <div className="game-info">
+          <h1 className="game-title">{game.naslov} ({game.godinaIzdanja})</h1>
+          <p className="game-price">{game.cijena} €</p>
+          <button 
+            className="add-review-button" 
+            onClick={() => setIsAddingReview(!isAddingReview)}
+          >
+            Dodaj recenziju
+          </button>
+          {isAddingReview && (
+            <form onSubmit={handleAddReview} className="add-review-form">
+              <input
+                type="text"
+                value={newReviewText}
+                onChange={(e) => setNewReviewText(e.target.value)}
+                required
+                placeholder="Unesite recenziju"
+              />
+              <button type="submit">Spremi</button>
+            </form>
+          )}
+        </div>
       </div>
 
       {manufacturer && (
@@ -152,52 +155,49 @@ const handleDeleteGame = () => {
           {country && <p><strong>Država porijekla:</strong> {country.naziv}</p>}
         </div>
       )}
-
+  
       <div className="recenzije">
         <h3>Recenzije:</h3>
         <ul className="recenzije-list">
-  {recenzije.map(r => (
-    <li key={r.id} className="recenzija-item">
-      {editingReviewId === r.id ? (
-        <form onSubmit={(e) => handleEditSubmit(e, r.id)} className="edit-form">
-          <input
-            type="text"
-            value={editText}
-            onChange={(e) => setEditText(e.target.value)}
-            required
-          />
-          <button type="submit">Spremi</button>
-        </form>
-      ) : (
-        <p className="recenzija-text">{r.recenzija}</p>
-      )}
-      <span 
-        className="delete-icon"
-        onClick={() => handleDeleteReview(r.id)}
-        style={{ cursor: 'pointer', color: 'red', marginLeft: '10px' }}
-        title="Obriši recenziju"
-      >
-        ❌
-      </span>
-      <span 
-        className="update-icon"
-        onClick={() => handleEditClick(r)} 
-        style={{ cursor: 'pointer', marginLeft: '10px' }}
-        title="Ažuriraj recenziju"
-      >
-        ✏️
-      </span>
-    </li>
-  ))}
-</ul>
+          {recenzije.map(r => (
+            <li key={r.id} className="recenzija-item">
+              {editingReviewId === r.id ? (
+                <form onSubmit={(e) => handleEditSubmit(e, r.id)} className="edit-form">
+                  <input
+                    type="text"
+                    value={editText}
+                    onChange={(e) => setEditText(e.target.value)}
+                    required
+                  />
+                  <button type="submit">Spremi</button>
+                </form>
+              ) : (
+                <p className="recenzija-text">{r.recenzija}</p>
+              )}
+              <span 
+                className="delete-icon"
+                onClick={() => handleDeleteReview(r.id)}
+              >
+                ❌
+              </span>
+              <span 
+                className="update-icon"
+                onClick={() => handleEditClick(r)}
+              >
+                ✏️
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
-
+  
       <div className="action-buttons">
         <button className="update-button" onClick={() => navigate(`/azuriraj-igricu/${id}`)}>Ažuriraj</button>
         <button className="delete-button" onClick={handleDeleteGame}>Obriši Igricu</button>
       </div>
     </div>
   );
+  
 }
 
 export default IgricaDetalji;
